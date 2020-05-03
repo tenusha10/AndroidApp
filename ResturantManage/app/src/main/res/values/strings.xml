@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Restaurant Manager</string>
+    <string name="Menu">Menu</string>
+    <string name="Home">Welcome Home Waiter</string>
+    <string name="myCart">Order-My Cart</string>
+    <string name="drinks">Drinks</string>
+    <string name="drinksdesc">Drinks</string>
+    <string name="todo">TODO</string>
+    <string name="order">Order</string>
+    <string name="table_view">Table View</string>
+    <string name="bill">Bill</string>
+    <string name="track">Track</string>
+    <string name="edit_orders">Edit Orders</string>
+    <string name="select_items_the_customer_would_like_to_order">Select items the customer would like to order</string>
+    <string name="msgMenu">Select items the customer would like to order</string>
+    <string name="txt_table_number">Table Number</string>
+    <string name="total_order_20_vat">Total Order (20% VAT)</string>
+    <string name="comfirm_order">Comfirm Order</string>
+</resources>

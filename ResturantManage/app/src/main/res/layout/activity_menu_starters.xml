@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuStarters">
+
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBarStarters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:mt_hint="Enter Food Name"
+        app:mt_speechMode="false" />
+
+    <TextView
+        android:layout_below="@+id/searchBarStarters"
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_items_the_customer_would_like_to_order" />
+
+    <ImageView
+        android:layout_below="@+id/searchBarStarters"
+        android:id="@+id/imageChicken"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentEnd="true"
+    android:scaleType="centerInside"
+    app:srcCompat="@drawable/chicken" />
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/startersList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/imageChicken"
+    android:scrollbars="vertical" />
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "712678327673",
+    "firebase_url": "https://order-track-app.firebaseio.com",
+    "project_id": "order-track-app",
+    "storage_bucket": "order-track-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712678327673:android:5a6a043be796a88e489ba8",
+        "android_client_info": {
+          "package_name": "com.example.firebasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHZxUmdgooz0nyecRro_nIFvq9-K9B1c0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712678327673:android:35acbf7440da99bb489ba8",
+        "android_client_info": {
+          "package_name": "com.example.ordertrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHZxUmdgooz0nyecRro_nIFvq9-K9B1c0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712678327673:android:2c30c5fc691cd7b3489ba8",
+        "android_client_info": {
+          "package_name": "com.example.resturantmanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHZxUmdgooz0nyecRro_nIFvq9-K9B1c0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712678327673-ujfee8t1nevq1ch23as7frjjmqst0075.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

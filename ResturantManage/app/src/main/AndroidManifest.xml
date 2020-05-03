@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.resturantmanage">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".tableDetail"></activity>
+        <activity
+            android:name=".FoodDetail"
+            android:label="Food Details" />
+        <activity
+            android:name=".MenuDesserts"
+            android:label="Desserts"
+            android:parentActivityName=".MenuHome" />
+        <activity
+            android:name=".MenuDrink"
+            android:label="Drinks"
+            android:parentActivityName=".MenuHome" />
+        <activity
+            android:name=".MenuMains"
+            android:label="Mains"
+            android:parentActivityName=".MenuHome" />
+        <activity
+            android:name=".MenuStarters"
+            android:label="Starters"
+            android:parentActivityName=".MenuHome" />
+        <activity
+            android:name=".EditOrder"
+            android:label="Edit Orders"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TrackOrder"
+            android:label="Track Orders"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Bill"
+            android:label="Bill Summary"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TableView"
+            android:label="Table View"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OrderCart"
+            android:label="@string/myCart"
+            android:parentActivityName=".MenuHome" />
+        <activity
+            android:name=".MenuHome"
+            android:label="@string/Menu"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Menu"
+            android:label="@string/Menu"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/Home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

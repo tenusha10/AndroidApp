@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuHome">
+
+    <ImageButton
+        android:id="@+id/Drinks"
+        android:layout_width="97dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="5dp"
+        android:background="#9567EC"
+        android:contentDescription="@string/drinksdesc"
+        android:onClick="DrinksClicked"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cocktail" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drinks"
+        app:layout_constraintBottom_toBottomOf="@+id/Drinks"
+        app:layout_constraintEnd_toEndOf="@+id/Drinks"
+        app:layout_constraintStart_toStartOf="@+id/Drinks" />
+
+    <ImageButton
+        android:id="@+id/Starters"
+        android:layout_width="95dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="10dp"
+        android:background="#9567EC"
+        android:contentDescription="@string/todo"
+        android:onClick="StartersClicked"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Drinks"
+        app:srcCompat="@drawable/chicken" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starters"
+        app:layout_constraintBottom_toBottomOf="@+id/Starters"
+        app:layout_constraintEnd_toEndOf="@+id/Starters"
+        app:layout_constraintStart_toStartOf="@+id/Starters" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="96dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="10dp"
+        android:background="#9567EC"
+        android:onClick="MainsClicked"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Starters"
+        app:srcCompat="@drawable/pizza" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mains"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton4"
+        app:layout_constraintStart_toStartOf="@+id/imageButton4" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="99dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:background="#9567EC"
+        android:onClick="DessertsClicked"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:srcCompat="@drawable/cake" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desserts"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton9"
+        app:layout_constraintStart_toStartOf="@+id/imageButton9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
