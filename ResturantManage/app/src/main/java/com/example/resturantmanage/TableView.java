@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,8 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TableView extends AppCompatActivity {
     ImageView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21;
+    ImageButton Table1;
     FirebaseDatabase database;
     DatabaseReference tables;
+    String TableNo="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,16 @@ public class TableView extends AppCompatActivity {
 
         //t1.setImageResource(R.drawable.red);
         loadAvailability();
+        Table1 =(ImageButton) findViewById(R.id.btnT1);
+        Table1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","1");
+                startActivity(i);
+            }
+        });
+
 
 
     }
@@ -267,7 +281,6 @@ public class TableView extends AppCompatActivity {
             }
         }
     }
-
 
 
 }

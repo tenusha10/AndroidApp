@@ -608,7 +608,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="4dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintStart_toEndOf="@+id/btnT1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/green" />
 
@@ -746,7 +746,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/btnT1"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -760,10 +760,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT1" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btnT1"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"

@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -124,18 +125,18 @@
         android:layout_height="138dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
-        android:background="#9567EC"
+        android:background="@color/cardview_light_background"
         android:onClick="EditClicked"
-        android:scaleType="fitStart"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:srcCompat="@drawable/order" />
+        app:srcCompat="@drawable/download" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/edit_orders"
+        android:text="Allergy Info"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
         app:layout_constraintEnd_toEndOf="@+id/imageButton5"
         app:layout_constraintStart_toStartOf="@+id/imageButton5" />

@@ -106,7 +106,7 @@ public class OrderCart extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         //calc total for order
-        int total = 0;
+        double total = 0;
         for(Order order:cart)
             total += (Double.parseDouble(order.getPrice()))*(Double.parseDouble(order.getQuantity()));
         Locale locale = new Locale("en","GB");

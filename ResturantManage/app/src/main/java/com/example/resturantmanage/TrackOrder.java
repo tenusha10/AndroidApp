@@ -56,7 +56,7 @@ public class TrackOrder extends AppCompatActivity {
                 Request.class,
                 R.layout.orders_list,
                 OrderViewHolder.class,
-                requests.orderByChild("TableNo")
+                requests.orderByChild("tableNo")
         ) {
             @Override
             protected void populateViewHolder(OrderViewHolder orderViewHolder, Request request, int i) {
@@ -79,7 +79,7 @@ public class TrackOrder extends AppCompatActivity {
         for(Order o : foods){
             row = "Name :  "+o.getProductName().toString() +"     " +"Qty:  "+o.getQuantity().toString();
             arrayList.add(row);
-            Log.d("T",row);
+            //Log.d("T",row);
         }
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,arrayList);
         return arrayAdapter;
