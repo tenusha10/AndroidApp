@@ -51,7 +51,7 @@ public class OrderCart extends AppCompatActivity {
         requests = database.getReference("Requests");
 
         //initialise
-        tableNumberPicker = findViewById(R.id.tableNoPicker);
+        tableNumberPicker = findViewById(R.id.tipPercentage);
         tableNumberPicker.setMaxValue(20);
         tableNumberPicker.setMinValue(1);
 

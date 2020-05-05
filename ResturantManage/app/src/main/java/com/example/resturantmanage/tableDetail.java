@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class tableDetail extends AppCompatActivity {
@@ -28,6 +29,9 @@ public class tableDetail extends AppCompatActivity {
     double t=0;
     double NewTotal=0;
     String strT="";
+    List<Order> itemsOrdered = new ArrayList<>();
+    ArrayList<List<Order>> bill = new ArrayList<List<Order>>();
+
 
     public RecyclerView recyclerView;
     public RecyclerView.LayoutManager layoutManager;
@@ -44,6 +48,7 @@ public class tableDetail extends AppCompatActivity {
         //firebase
         database = FirebaseDatabase.getInstance();
         requests=database.getReference("Requests");
+
 
 
         OrderFood = (ImageButton)findViewById(R.id.btnOrderMoreFood);
@@ -97,7 +102,9 @@ public class tableDetail extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(tableDetail.this,Bill.class);
                 intent.putExtra("TableNo",Tablenumber);
-                intent.putExtra("Total",NewTotal);
+                intent.putExtra("Total",Double.toString(NewTotal));
+                //intent.putParcelableArrayListExtra("BillContents",bill);
+                //Log.d("Test2",bill.get(0).get(0).getProductName());
                 startActivity(intent);
             }
         });
@@ -116,9 +123,9 @@ public class tableDetail extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        txtT = (TextView)findViewById(R.id.txtTableTotal);
         loadOrders(Tablenumber);
 
-        txtT = (TextView)findViewById(R.id.txtTableTotal);
 
 
 
@@ -137,12 +144,13 @@ public class tableDetail extends AppCompatActivity {
             protected void populateViewHolder(TableDetailsOrderViewHolder tableDetailsOrderViewHolder, Request request, int i) {
                 tableDetailsOrderViewHolder.txtOrderNo.setText("Order#: "+adapter.getRef(i).getKey());
                 tableDetailsOrderViewHolder.txtOrderTotal.setText(request.getTotal());
+                itemsOrdered=request.getFoods();
+                bill.add(itemsOrdered);
                 strT=request.getTotal().substring(1);
                 t+=(Double.parseDouble(strT));
                 Log.d("msg",Double.toString(t));
                 txtT.setText("£"+Double.toString(t));
                 NewTotal=t;
-
             }
         };
         recyclerView.setAdapter(adapter);
