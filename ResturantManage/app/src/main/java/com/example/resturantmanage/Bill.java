@@ -11,11 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.Query;
-
+//import android.support.v7.widget.ShareActionProvider;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
@@ -31,6 +34,8 @@ import java.util.Queue;
 public class Bill extends AppCompatActivity {
     String Tablenumber;
     String InitialTotal;
+    String voucher1=null;
+    String voucher2=null;
     FirebaseDatabase database;
     DatabaseReference foodlist;
     TextView tableNumber, txtTotal, ppCost;
@@ -40,6 +45,9 @@ public class Bill extends AppCompatActivity {
     Button Calctotal, billTable;
     DatabaseReference tablereq;
     DatabaseReference orderReq;
+    ImageButton ScanVoucher;
+    boolean v1=false;
+    String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,25 @@ public class Bill extends AppCompatActivity {
             Tablenumber = getIntent().getStringExtra("TableNo");
             InitialTotal = getIntent().getStringExtra("Total");
 
+
+            tableNumber= (TextView)findViewById(R.id.txtBillTableNumber);
+            tableNumber.setText("Table "+Tablenumber);
+
+            txtTotal=(TextView)findViewById(R.id.txtToPay);
+            txtTotal.setText("Total to Pay(20% VAT) £"+InitialTotal);
+
+            if(getIntent().getStringExtra("status") !=null) {
+                status = getIntent().getStringExtra("status");
+                if (status.equals("true")) {
+                    v1 = true;
+                    double t;
+                    t=(Double.parseDouble(InitialTotal)*0.9);
+                    InitialTotal=Double.toString(t);
+                    Log.d("bar",Double.toString(t));
+                    txtTotal.setText("Total to Pay(20% VAT) £"+InitialTotal);
+                    Toast.makeText(Bill.this,"Voucher Accepted",Toast.LENGTH_SHORT).show();
+                }
+            }
         }
 
         database = FirebaseDatabase.getInstance();
@@ -59,11 +86,7 @@ public class Bill extends AppCompatActivity {
         orderReq=database.getReference("Requests");
         getBillItems();
 
-        tableNumber= (TextView)findViewById(R.id.txtBillTableNumber);
-        tableNumber.setText("Table "+Tablenumber);
 
-        txtTotal=(TextView)findViewById(R.id.txtToPay);
-        txtTotal.setText("Total to Pay(20% VAT) £"+InitialTotal);
 
         ppCost=(TextView)findViewById(R.id.txtPPCost);
         ppCost.setText(InitialTotal);
@@ -110,6 +133,18 @@ public class Bill extends AppCompatActivity {
             }
         });
 
+        ScanVoucher=(ImageButton)findViewById(R.id.btnVoucher);
+        ScanVoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Bill.this,barcodeView.class);
+                i.putExtra("TableNo",Tablenumber);
+                i.putExtra("Total",InitialTotal);
+                startActivity(i);
+
+            }
+        });
+
 
 
 
@@ -141,21 +176,16 @@ public class Bill extends AppCompatActivity {
                 for(DataSnapshot postSnapshot:dataSnapshot.getChildren()){
                     Request order = postSnapshot.getValue(Request.class);
                     retreivedFood.add(addOrder(order.getFoods()));
-                    /*retreivedFood.add(order.getFoods());
-                    orderedFood.add(order.getFoods());
-                    Log.d("i",orderedFood.get(0).get(0).getProductName()); */
                 }
                 arrayList=joinArrays(retreivedFood);
                 arrayAdapter=getArrayAdapter(arrayList);
                 lstFood.setAdapter(arrayAdapter);
-                //ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,arrayList);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-        //Log.d("i",retreivedFood.get(0).get(0).getProductName());
-        //return retreivedFood;
+
     }
 
     private ArrayAdapter getArrayAdapter(ArrayList<String> arrayList) {
