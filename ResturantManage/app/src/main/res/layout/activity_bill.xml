@@ -23,27 +23,28 @@
     <TextView
         android:id="@+id/textView35"
         android:layout_width="389dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:background="#9B7DF5"
         android:text="Bill BreakDown"
         android:textColor="@color/colorText"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBillTableNumber" />
 
     <ListView
         android:id="@+id/billSummaryList"
-        android:layout_width="392dp"
-        android:layout_height="224dp"
+        android:layout_width="391dp"
+        android:layout_height="309dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="392dp"
-        android:layout_height="wrap_content"
+        android:layout_width="395dp"
+        android:layout_height="80dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:background="#B29CF3"
@@ -76,85 +77,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageButton
+            android:id="@+id/btnVoucher"
+            android:layout_width="96dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimary"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/coupon" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="19dp"
+            android:text="Have Voucher"
+            android:textColor="@color/colorText"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageButton
-        android:id="@+id/btnVoucher"
-        android:layout_width="96dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/coupon" />
-
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Have Voucher"
-        android:textColor="@color/colorText"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnPrint"
-        android:layout_width="102dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/print" />
-
-    <ImageButton
-        android:id="@+id/btnShare"
-        android:layout_width="96dp"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52"
-        app:srcCompat="@drawable/share" />
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:text="Share"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="8dp"
-        android:text="Print"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="391dp"
-        android:layout_height="wrap_content"
+        android:layout_height="63dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:background="#9B7DF5"

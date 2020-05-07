@@ -4,7 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,6 +52,8 @@ public class tableDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        createNotificationChannel();
         //firebase
         database = FirebaseDatabase.getInstance();
         requests=database.getReference("Requests");
@@ -69,7 +78,17 @@ public class tableDetail extends AppCompatActivity {
                 tablereq.child(Tablenumber).child("availability").setValue("1");
                 Toast.makeText(tableDetail.this,"Table Reserved",Toast.LENGTH_SHORT).show();
 
+                Intent pIntent= new Intent(tableDetail.this,ReminderBroadcast.class);
+                PendingIntent pendingIntent=PendingIntent.getBroadcast(tableDetail.this,0,pIntent,0);
 
+                AlarmManager alarmManager =(AlarmManager) getSystemService(ALARM_SERVICE);
+
+                long timeatButtonClick =System.currentTimeMillis();
+
+                long MaxWaitTime = 60000*5;
+                //long MaxWaitTime =1000*5;
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP,timeatButtonClick+MaxWaitTime,pendingIntent);
 
             }
         });
@@ -154,5 +173,18 @@ public class tableDetail extends AppCompatActivity {
             }
         };
         recyclerView.setAdapter(adapter);
+    }
+
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "ResturantManageChannel";
+            String description ="Channel for ResturantManage";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel= new NotificationChannel("ResturantManage", name,importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager=getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }

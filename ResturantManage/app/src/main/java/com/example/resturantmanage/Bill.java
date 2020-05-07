@@ -3,17 +3,22 @@ package com.example.resturantmanage;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ShareActionProvider;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.NumberPicker;
+//import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +31,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.Query;
-//import android.support.v7.widget.ShareActionProvider;
+
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
@@ -48,6 +54,8 @@ public class Bill extends AppCompatActivity {
     ImageButton ScanVoucher;
     boolean v1=false;
     String status;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,6 +156,34 @@ public class Bill extends AppCompatActivity {
 
 
 
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.shareaction,menu);
+        MenuItem shareItem = menu.findItem(R.id.action_share);
+        ShareActionProvider mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(createShareIntent());
+        }
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    private Intent createShareIntent() {
+        String emailbody="";
+        String line="";
+        for (int i=0;i<arrayAdapter.getCount();i++){
+            line= arrayAdapter.getItem(i).toString();
+            emailbody=emailbody+line;
+        }
+        String t="   "+ txtTotal.getText().toString();
+        emailbody=emailbody+t;
+        Log.d("email body",emailbody);
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT,emailbody);
+        return shareIntent;
     }
     public void DeleteOrders(){
         orderReq.orderByChild("tableNo").equalTo(Tablenumber).addListenerForSingleValueEvent(new ValueEventListener() {
