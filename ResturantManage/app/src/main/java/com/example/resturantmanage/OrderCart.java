@@ -5,7 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,7 +46,7 @@ public class OrderCart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_cart);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -78,6 +82,7 @@ public class OrderCart extends AppCompatActivity {
                     Toast.makeText(OrderCart.this, "Order Comfirmed", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(OrderCart.this,MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -112,8 +117,5 @@ public class OrderCart extends AppCompatActivity {
         Locale locale = new Locale("en","GB");
         NumberFormat nfmt = NumberFormat.getCurrencyInstance(locale);
         txtTotalPrice.setText(nfmt.format(total));
-
-
-
     }
 }

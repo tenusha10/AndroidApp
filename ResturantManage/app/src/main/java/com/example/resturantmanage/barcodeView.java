@@ -63,7 +63,6 @@ public class barcodeView extends AppCompatActivity {
         if(getIntent() != null) {
             Tablenumber = getIntent().getStringExtra("TableNo");
             InitialTotal = getIntent().getStringExtra("Total");
-
         }
         cameraPreview =(SurfaceView)findViewById(R.id.cameraPreview);
         txtResult=(TextView)findViewById(R.id.txtBarcodeRes);

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TableView extends AppCompatActivity {
     ImageView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21;
-    ImageButton Table1;
+    ImageButton Table1,Table2,Table3,Table4,Table5,Table6,Table7,Table8,Table9,Table10,Table11,Table12,Table13,Table14,Table15,Table16,Table17,Table18,Table19,Table20,Table21;
     FirebaseDatabase database;
     DatabaseReference tables;
     String TableNo="";
@@ -30,7 +31,7 @@ public class TableView extends AppCompatActivity {
 
         Intent intent = getIntent();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //firebase code
         database= FirebaseDatabase.getInstance();
         tables =database.getReference("Table");
@@ -48,6 +49,205 @@ public class TableView extends AppCompatActivity {
             }
         });
 
+        Table2 =(ImageButton)findViewById(R.id.btnT2);
+        Table2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","2");
+                startActivity(i);
+            }
+        });
+
+        Table3 =(ImageButton)findViewById(R.id.btnT3);
+        Table3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","3");
+                startActivity(i);
+            }
+        });
+
+        Table4 =(ImageButton)findViewById(R.id.btnT4);
+        Table4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","4");
+                startActivity(i);
+            }
+        });
+
+        Table5 =(ImageButton)findViewById(R.id.btnT5);
+        Table5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","5");
+                startActivity(i);
+            }
+        });
+
+        Table6 =(ImageButton)findViewById(R.id.btnT6);
+        Table6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","6");
+                startActivity(i);
+            }
+        });
+
+        Table7 =(ImageButton)findViewById(R.id.btnT7);
+        Table7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","7");
+                startActivity(i);
+            }
+        });
+
+        Table8 =(ImageButton)findViewById(R.id.btnT8);
+        Table8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","8");
+                startActivity(i);
+            }
+        });
+
+        Table9 =(ImageButton)findViewById(R.id.btnT9);
+        Table9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","9");
+                startActivity(i);
+            }
+        });
+
+        Table10 =(ImageButton)findViewById(R.id.btnT10);
+        Table10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","10");
+                startActivity(i);
+            }
+        });
+
+        Table11 =(ImageButton)findViewById(R.id.btnT11);
+        Table11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","11");
+                startActivity(i);
+            }
+        });
+
+        Table12 =(ImageButton)findViewById(R.id.btnT12);
+        Table12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","12");
+                startActivity(i);
+            }
+        });
+
+        Table13 =(ImageButton)findViewById(R.id.btnT13);
+        Table13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","13");
+                startActivity(i);
+            }
+        });
+
+        Table14 =(ImageButton)findViewById(R.id.btnT14);
+        Table14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","14");
+                startActivity(i);
+            }
+        });
+
+        Table15 =(ImageButton)findViewById(R.id.btnT15);
+        Table15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","15");
+                startActivity(i);
+            }
+        });
+
+        Table16 =(ImageButton)findViewById(R.id.btnT16);
+        Table16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","16");
+                startActivity(i);
+            }
+        });
+
+        Table17 =(ImageButton)findViewById(R.id.btnT17);
+        Table17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","17");
+                startActivity(i);
+            }
+        });
+
+        Table18 =(ImageButton)findViewById(R.id.btnT18);
+        Table18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","18");
+                startActivity(i);
+            }
+        });
+
+        Table19 =(ImageButton)findViewById(R.id.btnT19);
+        Table19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","19");
+                startActivity(i);
+            }
+        });
+
+        Table20 =(ImageButton)findViewById(R.id.btnT20);
+        Table20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","20");
+                startActivity(i);
+            }
+        });
+
+        Table21 =(ImageButton)findViewById(R.id.btnT21);
+        Table21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TableView.this,tableDetail.class);
+                i.putExtra("TableNo","21");
+                startActivity(i);
+            }
+        });
 
 
     }

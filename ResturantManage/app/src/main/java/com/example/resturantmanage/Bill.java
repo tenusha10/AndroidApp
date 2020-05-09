@@ -8,7 +8,9 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,6 +57,10 @@ public class Bill extends AppCompatActivity {
     boolean v1=false;
     String status;
 
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+
+
 
 
     @Override
@@ -62,8 +68,14 @@ public class Bill extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //orderedFood = getIntent().getData("BillContents");
-        //orderedFood = getIntent().getStringExtra("BillContents");
+
+        tableNumber= (TextView)findViewById(R.id.txtBillTableNumber);
+        txtTotal=(TextView)findViewById(R.id.txtToPay);
+
+        mPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor=mPreferences.edit();
+
+
         if(getIntent() != null) {
             Tablenumber = getIntent().getStringExtra("TableNo");
             InitialTotal = getIntent().getStringExtra("Total");
@@ -145,6 +157,10 @@ public class Bill extends AppCompatActivity {
         ScanVoucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mEditor.putString("TableNo",Tablenumber);
+                mEditor.commit();
+                mEditor.putString("Total",InitialTotal);
+                mEditor.commit();
                 Intent i = new Intent(Bill.this,barcodeView.class);
                 i.putExtra("TableNo",Tablenumber);
                 i.putExtra("Total",InitialTotal);
@@ -152,10 +168,6 @@ public class Bill extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
     }
     @Override
@@ -173,9 +185,9 @@ public class Bill extends AppCompatActivity {
     private Intent createShareIntent() {
         String emailbody="";
         String line="";
-        for (int i=0;i<arrayAdapter.getCount();i++){
-            line= arrayAdapter.getItem(i).toString();
-            emailbody=emailbody+line;
+        for (int i = 0; i < arrayAdapter.getCount(); i++) {
+            line = arrayAdapter.getItem(i).toString();
+            emailbody = emailbody + line;
         }
         String t="   "+ txtTotal.getText().toString();
         emailbody=emailbody+t;
@@ -252,4 +264,12 @@ public class Bill extends AppCompatActivity {
         return d;
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mEditor.putString("TableNo",Tablenumber);
+        mEditor.commit();
+        mEditor.putString("Total",InitialTotal);
+        mEditor.commit();
+    }
 }

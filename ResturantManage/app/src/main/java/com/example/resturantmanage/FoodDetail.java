@@ -4,7 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,10 +38,18 @@ public class FoodDetail extends AppCompatActivity {
 
     Food currentFood;
 
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_detail);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        mPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor= mPreferences.edit();
 
         //firebase code
         database = FirebaseDatabase.getInstance();
@@ -104,6 +116,27 @@ public class FoodDetail extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("lifecycle", "paused");
+        mEditor.putString("FoodID",foodId);
+        mEditor.commit();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("lifecycle", "Resumed");
+        String retreivedFoodID;
+        retreivedFoodID=mPreferences.getString("FoodID",null);
+        if(retreivedFoodID !=null){
+            //Log.d("lifecycle",retreivedFoodID);
+            foodId=retreivedFoodID;
+        }
     }
 
 }

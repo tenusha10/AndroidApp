@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orderList"
-        android:layout_width="395dp"
-        android:layout_height="319dp"
+        android:layout_width="396dp"
+        android:layout_height="407dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="5dp"
@@ -22,6 +22,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
         android:background="#A36AF8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +44,8 @@
 
         <NumberPicker
             android:id="@+id/tipPercentage"
-            android:layout_width="59dp"
-            android:layout_height="53dp"
+            android:layout_width="64dp"
+            android:layout_height="68dp"
             android:layout_marginEnd="68dp"
             android:fadeScrollbars="false"
             android:showDividers="middle|beginning|end"

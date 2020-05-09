@@ -13,7 +13,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="55dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton59"
+        app:layout_constraintStart_toEndOf="@+id/btnT21"
         app:layout_constraintTop_toBottomOf="@+id/imgT18"
         app:srcCompat="@drawable/green" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="56dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton58"
+        app:layout_constraintStart_toEndOf="@+id/btnT18"
         app:layout_constraintTop_toBottomOf="@+id/imgT15"
         app:srcCompat="@drawable/green" />
 
@@ -35,7 +35,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="54dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton57"
+        app:layout_constraintStart_toEndOf="@+id/btnT15"
         app:layout_constraintTop_toBottomOf="@+id/imgT12"
         app:srcCompat="@drawable/green" />
 
@@ -46,7 +46,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="49dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton52"
+        app:layout_constraintStart_toEndOf="@+id/btnT12"
         app:layout_constraintTop_toBottomOf="@+id/imgT9"
         app:srcCompat="@drawable/green" />
 
@@ -68,7 +68,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginTop="47dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton42"
+        app:layout_constraintStart_toEndOf="@+id/btnT6"
         app:layout_constraintTop_toBottomOf="@+id/imgT3"
         app:srcCompat="@drawable/green" />
 
@@ -78,12 +78,12 @@
         android:layout_height="29dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton50"
+        app:layout_constraintStart_toEndOf="@+id/btnT3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/imageButton59"
+        android:id="@+id/btnT21"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="44dp"
@@ -105,17 +105,17 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT20"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton58" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT18" />
 
     <ImageButton
-        android:id="@+id/imageButton58"
+        android:id="@+id/btnT18"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="41dp"
         android:layout_marginBottom="16dp"
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton59"
+        app:layout_constraintBottom_toTopOf="@+id/btnT21"
         app:layout_constraintStart_toEndOf="@+id/imgT17"
         app:srcCompat="@drawable/table" />
 
@@ -130,17 +130,17 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT17"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton57" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT15" />
 
     <ImageButton
-        android:id="@+id/imageButton57"
+        android:id="@+id/btnT15"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="16dp"
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton58"
+        app:layout_constraintBottom_toTopOf="@+id/btnT18"
         app:layout_constraintStart_toEndOf="@+id/imgT14"
         app:srcCompat="@drawable/table" />
 
@@ -155,7 +155,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT14"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton52" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT12" />
 
     <ImageButton
         android:id="@+id/imageButton53"
@@ -166,11 +166,11 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/btnT5"
         app:srcCompat="@drawable/table" />
 
     <ImageButton
-        android:id="@+id/imageButton52"
+        android:id="@+id/btnT12"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="176dp"
@@ -178,7 +178,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/btnT5"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -192,10 +192,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT5" />
 
     <ImageButton
-        android:id="@+id/imageButton50"
+        android:id="@+id/btnT3"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="40dp"
@@ -220,7 +220,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton41"
+        android:id="@+id/btnT9"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="176dp"
@@ -228,11 +228,11 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/btnT5"
         app:srcCompat="@drawable/table" />
 
     <ImageButton
-        android:id="@+id/imageButton42"
+        android:id="@+id/btnT6"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="176dp"
@@ -240,7 +240,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton14"
+        app:layout_constraintTop_toBottomOf="@+id/btnT2"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -254,7 +254,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT5" />
 
     <TextView
         android:id="@+id/textView57"
@@ -267,10 +267,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton14" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT2" />
 
     <ImageButton
-        android:id="@+id/imageButton40"
+        android:id="@+id/btnT20"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="144dp"
@@ -278,7 +278,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+        app:layout_constraintTop_toBottomOf="@+id/btnT16"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -292,7 +292,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton39" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT17" />
 
     <ImageView
         android:id="@+id/imgT20"
@@ -301,12 +301,12 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="56dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13"
+        app:layout_constraintStart_toEndOf="@+id/btnT19"
         app:layout_constraintTop_toBottomOf="@+id/imgT16"
         app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/imageButton39"
+        android:id="@+id/btnT17"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="144dp"
@@ -314,7 +314,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintTop_toBottomOf="@+id/btnT13"
         app:srcCompat="@drawable/table" />
 
     <ImageView
@@ -324,7 +324,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="48dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintStart_toEndOf="@+id/btnT16"
         app:layout_constraintTop_toBottomOf="@+id/imgT13"
         app:srcCompat="@drawable/green" />
 
@@ -339,10 +339,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT13" />
 
     <ImageButton
-        android:id="@+id/imageButton37"
+        android:id="@+id/btnT14"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="144dp"
@@ -350,7 +350,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton10"
+        app:layout_constraintTop_toBottomOf="@+id/btnT10"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -364,7 +364,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT10" />
 
     <ImageView
         android:id="@+id/imgT14"
@@ -373,12 +373,12 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="52dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
+        app:layout_constraintStart_toEndOf="@+id/btnT13"
         app:layout_constraintTop_toBottomOf="@+id/imgT10"
         app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/imageButton36"
+        android:id="@+id/btnT11"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="39dp"
@@ -386,7 +386,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/btnT5"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -400,7 +400,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT5" />
 
     <ImageView
         android:id="@+id/imgT11"
@@ -408,7 +408,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="50dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton36"
+        app:layout_constraintStart_toEndOf="@+id/btnT11"
         app:layout_constraintTop_toBottomOf="@+id/imgT8"
         app:srcCompat="@drawable/green" />
 
@@ -418,12 +418,12 @@
         android:layout_height="29dp"
         android:layout_marginTop="56dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton34"
+        app:layout_constraintStart_toEndOf="@+id/btnT8"
         app:layout_constraintTop_toBottomOf="@+id/imgT5"
         app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/imageButton34"
+        android:id="@+id/btnT8"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="39dp"
@@ -431,7 +431,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/btnT5"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -445,7 +445,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT5" />
 
     <ImageView
         android:id="@+id/imgT5"
@@ -453,7 +453,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="51dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15"
+        app:layout_constraintStart_toEndOf="@+id/btnT5"
         app:layout_constraintTop_toBottomOf="@+id/imgT2"
         app:srcCompat="@drawable/green" />
 
@@ -483,7 +483,7 @@
         app:srcCompat="@drawable/table" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/btnT5"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="39dp"
@@ -491,7 +491,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imgT4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton14"
+        app:layout_constraintTop_toBottomOf="@+id/btnT2"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -505,10 +505,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgT4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton14" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT2" />
 
     <ImageButton
-        android:id="@+id/imageButton14"
+        android:id="@+id/btnT2"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="39dp"
@@ -548,7 +548,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="59dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13"
+        app:layout_constraintStart_toEndOf="@+id/btnT19"
         app:layout_constraintTop_toBottomOf="@+id/imgT16"
         app:srcCompat="@drawable/green" />
 
@@ -558,7 +558,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="51dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintStart_toEndOf="@+id/btnT16"
         app:layout_constraintTop_toBottomOf="@+id/imgT13"
         app:srcCompat="@drawable/green" />
 
@@ -568,7 +568,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="55dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
+        app:layout_constraintStart_toEndOf="@+id/btnT13"
         app:layout_constraintTop_toBottomOf="@+id/imgT10"
         app:srcCompat="@drawable/green" />
 
@@ -578,7 +578,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="51dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton10"
+        app:layout_constraintStart_toEndOf="@+id/btnT10"
         app:layout_constraintTop_toBottomOf="@+id/imgT7"
         app:srcCompat="@drawable/green" />
 
@@ -588,7 +588,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="55dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
+        app:layout_constraintStart_toEndOf="@+id/btnT7"
         app:layout_constraintTop_toBottomOf="@+id/imgT4"
         app:srcCompat="@drawable/green" />
 
@@ -598,7 +598,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="59dp"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
+        app:layout_constraintStart_toEndOf="@+id/btnT4"
         app:layout_constraintTop_toBottomOf="@+id/imgT1"
         app:srcCompat="@drawable/green" />
 
@@ -613,7 +613,7 @@
         app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/btnT19"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -621,7 +621,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+        app:layout_constraintTop_toBottomOf="@+id/btnT16"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -635,10 +635,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton12" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT16" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/btnT16"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -646,7 +646,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintTop_toBottomOf="@+id/btnT13"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -660,10 +660,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT13" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/btnT13"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -671,7 +671,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton10"
+        app:layout_constraintTop_toBottomOf="@+id/btnT10"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -685,10 +685,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT10" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/btnT10"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -696,7 +696,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+        app:layout_constraintTop_toBottomOf="@+id/btnT7"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -710,10 +710,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT7" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/btnT7"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -721,7 +721,7 @@
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+        app:layout_constraintTop_toBottomOf="@+id/btnT4"
         app:srcCompat="@drawable/table" />
 
     <TextView
@@ -735,10 +735,10 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+        app:layout_constraintTop_toBottomOf="@+id/btnT4" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/btnT4"
         android:layout_width="74dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
