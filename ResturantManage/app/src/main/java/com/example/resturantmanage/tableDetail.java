@@ -172,7 +172,6 @@ public class tableDetail extends AppCompatActivity {
                 bill.add(itemsOrdered);
                 strT=request.getTotal().substring(1);
                 t+=(Double.parseDouble(strT));
-                Log.d("msg",Double.toString(t));
                 txtT.setText("£"+Double.toString(t));
                 NewTotal=t;
             }

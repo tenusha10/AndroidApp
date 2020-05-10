@@ -22,7 +22,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".barcodeView"
-            android:label="Scan Vocuher"
+            android:label="Scan Voucher"
             android:parentActivityName=".TableView" />
         <activity
             android:name=".tableDetail"

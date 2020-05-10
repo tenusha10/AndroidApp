@@ -9,13 +9,37 @@
 		width: 98vw;
         background-color:#8c4edd;
         color: aliceblue;
+    }
+    .responsive {
+        width: 60%;
+        height: auto;
+        }
+    .iconResponsive{
+        width: 10%;
+        height: auto;
+    }
+    h4 {
+        display: inline;
+    }
+
+    @media screen and (max-width:439px){
+	header h1{
+		font-size:2em;
 	}
+	article h1{
+		font-size:1em;
+	}
+	nav, article, aside {
+		width:100%;
+	}
+
+}
 </style>
 
 </head>
 
 <body>
-<h1>Welcome: Instruction Manual</h1>
+<h1>Welcome ! : Instruction Manual</h1>
 <h2>Introduction</h2>
 <p>Welcome to Resturant Manage! This app digitalise taking orders from customers and ushering customers to tables at the resturant. the app has a lot of functionality and it is split into diffrent sections which will be discussed below. The app is designed in a way that its very simple and easy to use and navigate.If you ever get stuck please refer to the sections below for instructions, Thanks!</p>
 
@@ -30,12 +54,56 @@
 </ol>
 
 <h3 id="homepage">Section 1: Homepage</h3>
-<h3 id="menu">Section 2: Menu</h3>
-<h3 id="order">Section 3: Order</h3>
-<h3 id="tableview">Section 4: Table View</h3>
-<h3 id="bill">Section 5: Bill</h3>
-<h3 id="track">Section 6: Track</h3>
+<p>This is the home page of the the app. From here you can naviagate to the area of your choice by touching the picture button. The user can navigate to the menu, order cart, table view , bill table , track orders and allergy information sheet.Basic Naviagtion is done through touch but if user wants to return to previous screen you can use android back button</p>
+<img src="images/homepage.png" alt="SC of homepage" class="responsive">
+<div>
+    <h4>Take Quick Note </h4>
+    <img src="images/noteicon.png" alt="note" class="iconResponsive">
+</div>
+<p>By clicking the yellow not icon on the top right of the screen you will be navigated to quick notes page where you can scribble in anything that you want to rememeber for example something that a customer is allergic to</p>
+<img src="images/quicknote.png" alt="quick note" class="responsive">
 
+<h3 id="menu">Section 2: Menu</h3>
+<p>Welcome to the Digital Menu, From here you can navigate to the the subcategories of the menu (Drinks, Starters, Mains and Deserts).To add the food item that the customer requires you can scroll through the list and select the food item or you could use the search functionality</p>
+<img src="images/menuhome.png" alt="menu home" class="responsive">
+<img src="images/menudrinks.png" alt="menu drinks" class="responsive">
+<img src="images/menustarters.png" alt="menu starters" class="responsive">
+<img src="images/menumains.png" alt="menu mains" class="responsive">
+<img src="images/menudeserts.png" alt="menu deserts" class="responsive">
+<h3>Search for food</h3>
+<p>To quickly find a food item you can do a search, Some suggestions are loaded to execute a quick search. After typing in the name of the food hit search button from keyboard then results will be loaded</p>
+<img src="images/searchS.png" alt=" search suggestions" class="responsive">
+<img src="images/searchR.png" alt="menu deserts" class="responsive">
+<h3>Adding Food to Cart</h3>
+<p>When a food item is selcted it will be expanded giving more details  about it from this screen, Select the quantity required using the number picker then press the "+" button to add item to cart</p>
+<img src="images/fooddetails.png" alt="food details" class="responsive">
+
+<h3 id="order">Section 3: Order</h3>
+<p>This is the basket, all food items that are added to the basket will be visible here, from here you can review what you have added to the cart and check with the customer to double check thier order. Then You must select the correct table number from the number picker and then press comfirm to submit the order. if you need to clear the cart you can click the bin icon at the top right </p>
+<img src="images/order.png" alt="order " class="responsive">
+<h3 id="tableview">Section 4: Table View</h3>
+<p>This is the table view in this page you can see which tables are occupied and which tables are free. Green light means the table is available, Red means the table is occupied, Blue means the table is occupied and food is served.</p>
+<img src="images/tableview.png" alt="tabel view" class="responsive">
+<h3>Usher guests and Table details</h3>
+<p>Use this feature to usher guests to a table that is available and click on table and mark as occupied. From table details you can order more food , release the table if the guest were to leave , mark as "food served", see all the orders placed by the table and bill the table</p>
+<img src="images/tabledetails.png" alt="tabel details" class="responsive">
+<h3 id="bill">Section 5: Bill</h3>
+<p>Bill feature allows you to bill out the table, you must select the table number through the table view and select bill table option within the table details page of the selected table. </p>
+<img src="images/bill1.png" alt="bill" class="responsive">
+<p>Send Email copy: hit the gmail button on the top right corner of the page this will take you to  the email client and insert customer emails to forward a copy of the receipt </p>
+<img src="images/email.png" alt="email" class="responsive">
+<p>Add vouchers : To scan a voucher press the "have voucher" button this will open up your camera and allow you to scan the voucher , please allow access to the camera and scan in voucher. if the voucher is valid it will be accepted if not hit back button to return back to bill </p>
+<p>A voucher example</p>
+<img src="images/voucher.png" alt="voucher" class="responsive">
+<img src="images/qrcode.png" alt="qr scanner" class="responsive">
+<p>Tips and Split Bill :  If the user wants to add tips or split the bill you need to select the appropriate values from the number pickers and hit calculate button to get a new total</p>
+<img src="images/calc.png" alt="calc" class="responsive">
+<p>Finally click the "Bill table" button at the bottom to complete the billing process"</p>
+<h3 id="track">Section 6: Track</h3>
+<p>From here you can track all the orders that is currently placed by other waiters or yourself. Scroll to find all existing orders and the order items. Use this to make sure the correct food is served to the correct table</p>
+<img src="images/track.png" alt="qr scanner" class="responsive">
+<p>Please use the official food standard document about allergies if you are ever unsure by clicking on the "Food standards agency" logo on the home page which will open a pdf giving information about allergies</p>
+<img src="images/allergy.png" alt="allergy" class="responsive">
 
 </body>
 </html>
