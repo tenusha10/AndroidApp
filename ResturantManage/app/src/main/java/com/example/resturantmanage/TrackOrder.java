@@ -53,6 +53,7 @@ public class TrackOrder extends AppCompatActivity {
 
     }
 
+    //loads all the orders that are currently active so the waiters can keep track of them
     private void loadOrders() {
         adapter= new FirebaseRecyclerAdapter<Request, OrderViewHolder>(
                 Request.class,
@@ -81,7 +82,6 @@ public class TrackOrder extends AppCompatActivity {
         for(Order o : foods){
             row = "Name :  "+o.getProductName().toString() +"     " +"Qty:  "+o.getQuantity().toString();
             arrayList.add(row);
-            //Log.d("T",row);
         }
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,arrayList);
         return arrayAdapter;

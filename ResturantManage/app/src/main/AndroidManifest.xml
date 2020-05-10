@@ -13,9 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppInstructions"
-            android:label="App User Manual"
+        <activity android:name=".QuickNote"
+            android:label="Doodle Quick Note"
             android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".AppInstructions"
+            android:label="App User Manual"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".barcodeView"
             android:label="Scan Vocuher"

@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+//view holder for recycler view in order cart
 public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtOrderNo, txtTableNo;
     public ListView listViewFood;

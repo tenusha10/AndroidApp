@@ -69,6 +69,7 @@ public class OrderCart extends AppCompatActivity {
 
         loadCartItems();
 
+        //adds order to the db linked to  a table number provided by user
         btnSumbitOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +97,7 @@ public class OrderCart extends AppCompatActivity {
     @Override
     public  boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
+        //removes the order from cart
         if(id == R.id.action_trash) {
             new Database(getBaseContext()).clearCart();
             Intent refresh = new Intent(OrderCart.this,OrderCart.class);
@@ -105,6 +107,7 @@ public class OrderCart extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //load contents from local db
     public void loadCartItems(){
         cart= new Database(this).retriveCart();
         adapter= new CartAdapter(cart,this);

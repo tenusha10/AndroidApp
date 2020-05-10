@@ -56,12 +56,12 @@ public class tableDetail extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         createNotificationChannel();
-        //firebase
+        //firebase code
         database = FirebaseDatabase.getInstance();
         requests=database.getReference("Requests");
 
 
-
+        //Initialise
         OrderFood = (ImageButton)findViewById(R.id.btnOrderMoreFood);
         OrderFood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,11 +75,13 @@ public class tableDetail extends AppCompatActivity {
         occupyTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //changes the availability of the table to occupied which is stored as "1" in the db
                 database =FirebaseDatabase.getInstance();
                 tablereq=database.getReference("Table");
                 tablereq.child(Tablenumber).child("availability").setValue("1");
                 Toast.makeText(tableDetail.this,"Table Reserved",Toast.LENGTH_SHORT).show();
 
+                //pending intent created
                 Intent pIntent= new Intent(tableDetail.this,ReminderBroadcast.class);
                 PendingIntent pendingIntent=PendingIntent.getBroadcast(tableDetail.this,0,pIntent,0);
 
@@ -88,8 +90,8 @@ public class tableDetail extends AppCompatActivity {
                 long timeatButtonClick =System.currentTimeMillis();
 
                 long MaxWaitTime = 60000*5;
-                //long MaxWaitTime =1000*5;
-
+                //alarm manager sends a push notification after 5 minutes if and order hasn't been placed from the occupied table
+                //reminds waiter to take an order
                 alarmManager.set(AlarmManager.RTC_WAKEUP,timeatButtonClick+MaxWaitTime,pendingIntent);
 
             }
@@ -99,6 +101,7 @@ public class tableDetail extends AppCompatActivity {
         releaseTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //marks table as available in the db  sets the availability value to "0" meaning free
                 database =FirebaseDatabase.getInstance();
                 tablereq=database.getReference("Table");
                 tablereq.child(Tablenumber).child("availability").setValue("0");
@@ -110,6 +113,7 @@ public class tableDetail extends AppCompatActivity {
         serveFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //marks that food has been served to the table in the db and marks availability value to "2" meaning food is served
                 database =FirebaseDatabase.getInstance();
                 tablereq=database.getReference("Table");
                 tablereq.child(Tablenumber).child("availability").setValue("2");
@@ -121,11 +125,10 @@ public class tableDetail extends AppCompatActivity {
         billTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //takes user to functionality to bill the table
                 Intent intent = new Intent(tableDetail.this,Bill.class);
                 intent.putExtra("TableNo",Tablenumber);
                 intent.putExtra("Total",Double.toString(NewTotal));
-                //intent.putParcelableArrayListExtra("BillContents",bill);
-                //Log.d("Test2",bill.get(0).get(0).getProductName());
                 startActivity(intent);
             }
         });
@@ -134,7 +137,6 @@ public class tableDetail extends AppCompatActivity {
 
 
             Tablenumber = getIntent().getStringExtra("TableNo");
-            //Log.w("Test", Tablenumber);
             DisplayTableNo = (TextView) findViewById(R.id.txtDetailTableNo);
             DisplayTableNo.setText("Table " + Tablenumber);
 
@@ -153,6 +155,7 @@ public class tableDetail extends AppCompatActivity {
 
     }
 
+    //loads all orders linked to the given table number into the recycler view
     private void loadOrders(String tnumber) {
         adapter= new FirebaseRecyclerAdapter<Request, TableDetailsOrderViewHolder>(
                 Request.class,
@@ -177,6 +180,7 @@ public class tableDetail extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    //creates a notification channel for devices running android Oreo +
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "ResturantManageChannel";

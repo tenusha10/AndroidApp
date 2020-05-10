@@ -23,18 +23,21 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+
+//class implements the QRcodeScanner feature using google vision API
 public class barcodeView extends AppCompatActivity {
     SurfaceView cameraPreview;
     TextView txtResult;
     BarcodeDetector barcodeDetector;
     CameraSource cameraSource;
     final int RequestCameraPermissionID=1001;
-    String voucher="1009786784037";
+    String voucher="1009786784037"; //accepted voucher code
     String result;
     String Tablenumber;
     String InitialTotal;
 
 
+    //request permission to access the camera
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode)
@@ -60,6 +63,8 @@ public class barcodeView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //initialise
         if(getIntent() != null) {
             Tablenumber = getIntent().getStringExtra("TableNo");
             InitialTotal = getIntent().getStringExtra("Total");
@@ -75,6 +80,8 @@ public class barcodeView extends AppCompatActivity {
                 .setRequestedPreviewSize(640,480)
                 .build();
 
+
+        //creates camera view and start camera activity
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
@@ -101,6 +108,7 @@ public class barcodeView extends AppCompatActivity {
             }
         });
 
+        //catches scanned results
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
@@ -123,14 +131,12 @@ public class barcodeView extends AppCompatActivity {
             }
 
         });
-        /*if(result != null){
-            checkResults();
-        } */
     }
 
+    //function checks if the scanned QR code quals the unique voucher code and if so voucher is accepted
     public void checkResults(String res){
         if(res.equals(voucher)){
-            //Toast.makeText(barcodeView.this,"Voucher Accepted for 5% off bill",Toast.LENGTH_SHORT).show();
+            //returns back to the bill page
             Intent bill = new Intent(barcodeView.this,Bill.class);
             bill.putExtra("TableNo",Tablenumber);
             bill.putExtra("Total",InitialTotal);

@@ -27,6 +27,7 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 import java.util.ArrayList;
 import java.util.List;
 
+/* Menu Drink , Menu Dessert , Menu Starters and Menu Mains all contain similar code please refer to Menu deserts for comments */
 public class MenuDrink extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;

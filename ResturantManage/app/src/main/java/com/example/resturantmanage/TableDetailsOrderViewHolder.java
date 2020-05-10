@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+//view holder for recycler view in  table details
 public class TableDetailsOrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtOrderNo,txtOrderTotal;
     public TableDetailsOrderViewHolder(@NonNull View itemView) {

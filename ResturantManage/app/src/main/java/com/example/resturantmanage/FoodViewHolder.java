@@ -12,7 +12,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public TextView mName;
     public TextView mDesc;
     public TextView mPrice;
-    //public ImageButton addButton;
+    // viewHolder for the recycler vies found in starter,main,deserts and drinks menu pages
 
     private com.example.resturantmanage.ItemClickListener itemClickListener;
 

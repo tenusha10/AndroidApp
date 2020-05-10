@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuDesserts extends AppCompatActivity {
+
+    //Initialise
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     String categoryID ="";
@@ -71,6 +73,8 @@ public class MenuDesserts extends AppCompatActivity {
         if(!categoryID.isEmpty() && categoryID!=null){
             loadListFood(categoryID);
         }
+
+        //implement a search bar to quickly search for food items from the recycler view
         materialSearchBar =(MaterialSearchBar)findViewById(R.id.searchBarDesserts);
         materialSearchBar.setHint("Enter your Food");
         loadSuggestions();
@@ -136,6 +140,8 @@ public class MenuDesserts extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //function binds the adapter to the recycler view after reading contents off the db
     private void loadListFood(String categoryID) {
         adapter = new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,R.layout.food_list_item,FoodViewHolder.class,foodList.orderByChild("MenuID").equalTo(categoryID)) {
             @Override
@@ -158,6 +164,8 @@ public class MenuDesserts extends AppCompatActivity {
         };
         recyclerView.setAdapter(adapter);
     }
+
+    //performs a search and attaches  a new adapter to the recycler view containing the results
     private void startSearch(CharSequence text) {
         searchAdapter = new FirebaseRecyclerAdapter<Food, FoodViewHolder>(
                 Food.class,
@@ -187,6 +195,7 @@ public class MenuDesserts extends AppCompatActivity {
 
     }
 
+    //functions attaches suggestion to the search so the user can execute a quick search
     private void loadSuggestions() {
         foodList.orderByChild("MenuID").equalTo(categoryID).addValueEventListener(new ValueEventListener() {
             @Override

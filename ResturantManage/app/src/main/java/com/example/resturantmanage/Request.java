@@ -2,6 +2,7 @@ package com.example.resturantmanage;
 
 import java.util.List;
 
+//object requests is an order that is placed and saved in the firebase db conatisn the table no , total, and the List of food items that the order contains
 public class Request {
     private String TableNo;
     private String Total;

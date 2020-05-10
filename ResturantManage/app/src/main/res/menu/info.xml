@@ -4,6 +4,11 @@
     <item
         android:id="@+id/info"
         android:icon="@drawable/info"
-        android:title="Basket"
+        android:title="Info"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/note"
+        android:icon="@drawable/note"
+        android:title="Notes"
         app:showAsAction="always"></item>
 </menu>

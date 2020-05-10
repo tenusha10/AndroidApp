@@ -42,8 +42,6 @@ import java.util.Queue;
 public class Bill extends AppCompatActivity {
     String Tablenumber;
     String InitialTotal;
-    String voucher1=null;
-    String voucher2=null;
     FirebaseDatabase database;
     DatabaseReference foodlist;
     TextView tableNumber, txtTotal, ppCost;
@@ -68,6 +66,8 @@ public class Bill extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Initialise
 
         tableNumber= (TextView)findViewById(R.id.txtBillTableNumber);
         txtTotal=(TextView)findViewById(R.id.txtToPay);
@@ -101,10 +101,11 @@ public class Bill extends AppCompatActivity {
             }
         }
 
+        //firebase code
         database = FirebaseDatabase.getInstance();
         foodlist=database.getReference("Requests");
         orderReq=database.getReference("Requests");
-        getBillItems();
+        getBillItems(); //adds ordered items into listview
 
 
 
@@ -127,6 +128,7 @@ public class Bill extends AppCompatActivity {
         Calctotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //total cost recalculated after adding constraints such as tip% and splits
                 int SplitNumber;
                 double costPP,Percentage;
                 double newTotal;
@@ -143,6 +145,7 @@ public class Bill extends AppCompatActivity {
         billTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //this function deletes all the orders linked to table off firebase db and release the table(available)
                 database =FirebaseDatabase.getInstance();
                 tablereq=database.getReference("Table");
                 tablereq.child(Tablenumber).child("availability").setValue("0");
@@ -157,6 +160,7 @@ public class Bill extends AppCompatActivity {
         ScanVoucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //redirects to the QRcode scanner activity
                 mEditor.putString("TableNo",Tablenumber);
                 mEditor.commit();
                 mEditor.putString("Total",InitialTotal);
@@ -170,10 +174,13 @@ public class Bill extends AppCompatActivity {
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //creates a share action provider
         getMenuInflater().inflate(R.menu.shareaction,menu);
         MenuItem shareItem = menu.findItem(R.id.action_share);
+        //user can send and email copy of the receipt to the customers email using the share action provider
         ShareActionProvider mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
         if (mShareActionProvider != null) {
             mShareActionProvider.setShareIntent(createShareIntent());
@@ -182,6 +189,7 @@ public class Bill extends AppCompatActivity {
 
     }
 
+    //puts the listview contents into an email intent
     private Intent createShareIntent() {
         String emailbody="";
         String line="";
@@ -197,6 +205,8 @@ public class Bill extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_TEXT,emailbody);
         return shareIntent;
     }
+
+    //function deletes the orders linked to the table off firebase db
     public void DeleteOrders(){
         orderReq.orderByChild("tableNo").equalTo(Tablenumber).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -214,6 +224,7 @@ public class Bill extends AppCompatActivity {
 
     }
 
+    //these functions retreives all orders and their items from the db and bind it to the listview
     public void getBillItems() {
         foodlist.orderByChild("tableNo").equalTo(Tablenumber).addValueEventListener(new ValueEventListener() {
             @Override

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    //Handing onclicks of the image buttons to navigate to different pages
     public void MenuClicked(View view){
         Intent intent = new Intent(MainActivity.this, com.example.resturantmanage.MenuHome.class);
         startActivity(intent);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        //App requires Internet connection to read and write to firebase therefore the app checks if the device is connected to the internet and make the user aware
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
 
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //infalte the action menu and handle onclicks
     @Override
     public  boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.info,menu);
@@ -80,8 +83,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public  boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
+
+        //directs to the webview
         if(id == R.id.info) {
             Intent intent = new Intent(this, AppInstructions.class);
+            startActivity(intent);
+            return true;
+        }
+        //directs to custom view to take a quick note
+        if(id == R.id.note) {
+            Intent intent = new Intent(this, QuickNote.class);
             startActivity(intent);
             return true;
         }

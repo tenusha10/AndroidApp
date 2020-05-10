@@ -37,8 +37,10 @@ public class TableView extends AppCompatActivity {
         tables =database.getReference("Table");
 
 
-        //t1.setImageResource(R.drawable.red);
+
         loadAvailability();
+
+        //inflate activity on table details when each table number is clicked by the user
         Table1 =(ImageButton) findViewById(R.id.btnT1);
         Table1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,6 +254,10 @@ public class TableView extends AppCompatActivity {
 
     }
 
+    //loops through the data in the db and check availability for each table and chnages the colour according;
+    //Green: available
+    //Red:Occupied
+    //Blue:Occupied and food served
     public void loadAvailability(){
         tables.addValueEventListener(new ValueEventListener() {
             @Override

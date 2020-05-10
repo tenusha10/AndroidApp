@@ -1,5 +1,6 @@
 package com.example.resturantmanage;
 
+//this object stores the availability of each table in the restaurant
 public class Table {
     private String availability;
     private String tableNo;

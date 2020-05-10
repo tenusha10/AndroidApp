@@ -2,6 +2,7 @@ package com.example.resturantmanage;
 
 import javax.sql.StatementEvent;
 
+//Order object contains all information in an order and is stored in the local db
 public class Order {
     private String ProductId;
     private String ProductName;

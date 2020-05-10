@@ -51,6 +51,8 @@ public class FoodDetail extends AppCompatActivity {
         mPreferences= PreferenceManager.getDefaultSharedPreferences(this);
         mEditor= mPreferences.edit();
 
+        //Initialise
+
         //firebase code
         database = FirebaseDatabase.getInstance();
         foods= database.getReference("Menu");
@@ -64,6 +66,7 @@ public class FoodDetail extends AppCompatActivity {
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //adds the selected food item into the cart uses DB helper class
                 new Database(getBaseContext()).addToCart(new Order(
                         foodId,
                         currentFood.getName(),
@@ -85,6 +88,8 @@ public class FoodDetail extends AppCompatActivity {
         }
 
     }
+
+    //inflate menu so user can quickly check whats in the basket
     @Override
     public  boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.basket,menu);
@@ -101,6 +106,8 @@ public class FoodDetail extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //function retreives data about the selected food item from the db
     private void getDetailFood(String foodId){
         foods.child(foodId).addValueEventListener(new ValueEventListener() {
             @Override
@@ -134,7 +141,6 @@ public class FoodDetail extends AppCompatActivity {
         String retreivedFoodID;
         retreivedFoodID=mPreferences.getString("FoodID",null);
         if(retreivedFoodID !=null){
-            //Log.d("lifecycle",retreivedFoodID);
             foodId=retreivedFoodID;
         }
     }

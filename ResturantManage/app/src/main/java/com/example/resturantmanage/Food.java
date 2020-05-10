@@ -1,5 +1,7 @@
 package com.example.resturantmanage;
 
+
+//Object class Food created to retreive data from DB
 public class Food {
     private String Description, Name, Price, MenuID;
 

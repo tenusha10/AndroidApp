@@ -11,6 +11,8 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+//Local DB helper class
+//This class handles all the operations thats done using the local DB
 public class Database extends SQLiteAssetHelper {
     private static final String DB_NAME="ResDB.db";
     private static final int DB_VER=1;

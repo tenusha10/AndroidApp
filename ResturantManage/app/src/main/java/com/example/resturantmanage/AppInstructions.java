@@ -10,6 +10,7 @@ import android.webkit.WebViewClient;
 public class AppInstructions extends AppCompatActivity {
     WebView webView;
 
+    //Class that contains the webview the html file found in assets is bind to the webview here
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
